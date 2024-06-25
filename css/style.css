@@ -1,3 +1,13 @@
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+   box-shadow: black;
+}
+
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
