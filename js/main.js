@@ -8,9 +8,18 @@ function readAll () {
     (elements += `<tr>
     <td> ${d.items}</td>
     <td> ${d.amount}</td>
-    <td> <button onclick="(${del()})">Delete</button></td>
+    <td> <button onclick="()">Delete</button></td>
     <tr>
   `)
 );
 tData.innerHTML = elements;
+}
+
+function add(){
+  let items = document.getElementById('items').value;
+  let amount = Number (document.getElementById('amount').value);
+
+  let newObject = { items, amount};
+  data.push(newObject);
+  readAll();
 }
