@@ -17,9 +17,9 @@
           <input type="text" placeholder="Enter your items" id="items" /><br />
           <br />
           <label for="Amount">Amount</label><br />
-          <input type="number" placeholder="Enter your Amount " id="amount" required/><br>
+          <input type="number" placeholder="Enter your Amount " id="amount"/><br>
           <br>
-          <button type="submit">Add + </button>
+          <button onclick="add()">Add + </button>
         </div>
       </div>
     </div>
@@ -28,18 +28,15 @@
      
     <table class="table">
         <thead>
-            <tr>
-                <th  id="item">Items</th>
-                <th  id="amount">Amount</th>
-                <th  id="remove">Remove</th>
-
-            </tr>
+            
+                <th>Items</th>
+                <th>Amount</th>
+                <th>Remove</th>
         </thead>
-        
+        <tbody id="table_data"></tbody>
+
     </table>
     
-
-  </div>
     <script src="/js/main.js"></script>
   </body>
 </html>
