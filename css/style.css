@@ -10,3 +10,18 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+    
+.table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #060606;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
