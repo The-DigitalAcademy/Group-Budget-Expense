@@ -15,6 +15,8 @@ function readAll () {
 tData.innerHTML = elements;
 }
 function del(index) {
-    data.splice(index); 
+    data.splice(index, 1); 
     updateTable();
-  }
+}
+
+  
