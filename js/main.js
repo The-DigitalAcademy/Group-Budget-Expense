@@ -14,3 +14,7 @@ function readAll () {
 );
 tData.innerHTML = elements;
 }
+function del(index) {
+    data.splice(index); 
+    updateTable();
+  }
