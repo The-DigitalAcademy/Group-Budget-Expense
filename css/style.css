@@ -32,3 +32,10 @@ h1{
 input{
     color: black;
 }
+
+::placeholder{
+    color: black;
+    font-size: 12px;
+    text-align: center;
+
+}
