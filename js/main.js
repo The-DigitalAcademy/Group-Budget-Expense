@@ -32,7 +32,17 @@ function add() {
 function del(index) {
     data.splice(index, 1); 
     readAll();
+
+
+    subtractFromTotal(deletedAmount); }
+
+function subtractFromTotal(amount) {
+    let totalDisplay = document.getElementById('display');
+    let currentTotal = Number(totalDisplay.innerHTML.replace('Your total is: ', ''));
+    let newTotal =  currentTotal - amount ;
+    totalDisplay.innerHTML = "your total is" + newTotal;
 }
+
 
 function tot() {
     let totalAmount = 0;
