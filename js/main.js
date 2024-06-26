@@ -17,42 +17,63 @@ function add() {
     let items = document.getElementById('items').value;
     let amount = Number(document.getElementById('amount').value);
 
-    if (items && amount) { 
+    if (items && amount ) { 
         let newObject = { items, amount };
         data.push(newObject);
         readAll();
 
         document.getElementById('items').value = '';
         document.getElementById('amount').value = '';
+
+       
     } else {
         alert('Please enter both items and amount.');
     }
 }
 
 function del(index) {
+    
+        let deletedAmount = data[index].amount; 
+    
     data.splice(index, 1); 
     readAll();
+    
 
 
-    subtractFromTotal(deletedAmount); }
+   
+subtractFromTotal(deletedAmount); }
 
 function subtractFromTotal(amount) {
     let totalDisplay = document.getElementById('display');
     let currentTotal = Number(totalDisplay.innerHTML.replace('Your total is: ', ''));
-    let newTotal =  currentTotal - amount ;
-    totalDisplay.innerHTML = "your total is" + newTotal;
+
+    if (!isNaN(currentTotal)) {
+        let newTotal = currentTotal - amount;
+        totalDisplay.innerHTML = "Your total is: " + newTotal.toFixed(2); 
+    } else {
+        console.error('Error: Invalid current total value.');
+    }
 }
 
 
-function tot() {
-    let totalAmount = 0;
-    data.forEach((d) => {
-        totalAmount += d.amount;
-    });
+
+
+
+
+    function tot() {
+        let totalAmount = 0;
+        data.forEach((d) => {
+            totalAmount += d.amount;
+        });
+    
+        
+        
+        
+        let totalDisplay = document.getElementById('display');
+        totalDisplay.innerHTML = "Your total is: " + totalAmount;
+    }
 
     
     
     
-    let totalDisplay = document.getElementById('display');
-    totalDisplay.innerHTML = "Your total is: " + totalAmount;
-}
+    
