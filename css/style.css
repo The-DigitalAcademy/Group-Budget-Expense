@@ -25,3 +25,32 @@ h1{
    padding-top: 20px;
    
 }
+
+.form_container{
+    color: black;
+}
+input{
+    color: black;
+}
+
+::placeholder{
+    color: black;
+    font-size: 12px;
+    text-align: center;
+
+}
+
+.textb{
+    border: none;
+    border-bottom:solid whitesmoke;
+    border-width: 2px;
+    border-color: rgba(68, 18, 217, 0.541);
+    background-color: transparent;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    width: 200px;
+    padding-bottom: 2px;
+}
+label{
+    font-weight: 600;
+}
