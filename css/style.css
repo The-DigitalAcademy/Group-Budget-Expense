@@ -54,3 +54,19 @@ input{
 label{
     font-weight: 600;
 }
+table, th, td {
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 14px;
+    margin-left: -18px;
+
+}
+
+.tableheading{
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
