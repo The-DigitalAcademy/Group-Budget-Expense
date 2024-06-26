@@ -17,7 +17,7 @@ function add() {
     let items = document.getElementById('items').value;
     let amount = Number(document.getElementById('amount').value);
 
-    if (items && amount ) { 
+    if (items !== " " && amount !==  0) { 
         let newObject = { items, amount };
         data.push(newObject);
         readAll();
