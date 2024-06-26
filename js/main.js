@@ -33,3 +33,16 @@ function del(index) {
     data.splice(index, 1); 
     readAll();
 }
+
+function tot() {
+    let totalAmount = 0;
+    data.forEach((d) => {
+        totalAmount += d.amount;
+    });
+
+    
+    
+    
+    let totalDisplay = document.getElementById('display');
+    totalDisplay.innerHTML = "Your total is: " + totalAmount;
+}
