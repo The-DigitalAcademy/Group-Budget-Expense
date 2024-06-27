@@ -51,7 +51,7 @@ function subtractFromTotal(amount) {
         let newTotal = currentTotal - amount;
         totalDisplay.innerHTML = "Your total is: " + newTotal.toFixed(2); 
     } else {
-        console.error('Error: Invalid current total value.');
+        alert('Invalid current total value.');
     }
 }
 
