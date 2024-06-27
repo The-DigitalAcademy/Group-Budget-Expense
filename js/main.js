@@ -1,4 +1,18 @@
-let data = []; 
+let data = JSON.parse(localStorage.getItem('data')) || [];
+    // let data = []
+    
+    loadTasksFromLocStorage(); // load tasks from local storage 
+    readAll(); 
+
+
+function loadTasksFromLocStorage(){ //create load tasks function
+   const savedData = localStorage.getItem('data');
+
+   if (savedData) {
+    this.data = JSON.parse(savedData);
+   }
+
+}
 
 function readAll() {
     let tData = document.getElementById('table_data');
@@ -11,7 +25,10 @@ function readAll() {
           </tr>`;
     });
     tData.innerHTML = elements;
+    tot()
 }
+
+
 
 function add() {
     let items = document.getElementById('items').value;
@@ -20,7 +37,10 @@ function add() {
     if (items !== " " && amount !==  0) { 
         let newObject = { items, amount };
         data.push(newObject);
+        localStorage.setItem('data', JSON.stringify(data));
+
         readAll();
+        tot();
 
         document.getElementById('items').value = '';
         document.getElementById('amount').value = '';
@@ -29,19 +49,22 @@ function add() {
     } else {
         alert('Please enter both items and amount.');
     }
+    
 }
 
 function del(index) {
-    
-        let deletedAmount = data[index].amount; 
-    
-    data.splice(index, 1); 
-    readAll();
-    
+    if (index >= 0 && index < data.length) {
+        let deletedAmount = data[index].amount;
+        data.splice(index, 1);
+        localStorage.setItem('data', JSON.stringify(data));
+        readAll(); // Update table display after deletion
+        subtractFromTotal(deletedAmount); // Update total after deletion
+    } else {
+        console.error('Invalid index for deletion.');
+    }
+    tot()
+}
 
-
-   
-subtractFromTotal(deletedAmount); }
 
 function subtractFromTotal(amount) {
     let totalDisplay = document.getElementById('display');
@@ -53,7 +76,10 @@ function subtractFromTotal(amount) {
     } else {
         console.error('Error: Invalid current total value.');
     }
+
 }
+
+
 
 
 
@@ -70,7 +96,7 @@ function subtractFromTotal(amount) {
         
         
         let totalDisplay = document.getElementById('display');
-        totalDisplay.innerHTML = "Your total is: " + totalAmount;
+        totalDisplay.innerHTML = "Your total is: " + totalAmount.toFixed(2);
     }
 
     
